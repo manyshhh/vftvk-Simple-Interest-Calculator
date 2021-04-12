@@ -1,32 +1,27 @@
-function rate(){
-    var ratevalue=document.getElementById("interestrate");
-    document.getElementById("r").innerHTML=ratevalue.value+"%";
-  }
 
-  function compute(){
-    event.preventDefault();
-    var ratevalue=parseFloat(document.getElementById("interestrate").value);
-    var principal=parseFloat(document.getElementById("amount").value);
-    var time=parseFloat(document.getElementById("years").value);
-    var total= principal*(1+((ratevalue)*(time)));
-    if((principle.value == "") || (principle.value < 1)){
-          alert("Please enter a positive number");
-          principle.focus();
-          return false;
-          return true;
-    }
+function checkdata() {
+  var am = document.getElementById("principal");
+  var rt = document.getElementById("rate").value;
+  var yr = document.getElementById("years").value;
+
+  var d = new Date();
+  var n = d.getFullYear();
   
-    var today=new Date();
-    var year=today.getFullYear();
-    time+=year;
-    var result="If you deposit ";
-    result+=principal;
-    result+=" at an interest rate of "
-    result+=ratevalue;
-    result+="%";
-    result+=" You will receive an amount of ";
-    result+=total;
-    result+=" in the year ";
-    result+=time
-    document.getElementById("result").innerHTML=result;
-    }
+  if ((am.value == "") || (am.value < 0) || (am.value == 0)) {
+    alert("Please enter a positive number");
+    am.focus();
+    
+  } else {
+  	return ("If you deposit " + am.value + ", at an interest rate of " + rt + "%. You will recieve an amount of " + (yr * (am.value * (rt / 100))) + ", in the year of " + (+yr + n));
+  }
+  
+}
+
+function compute() {
+  document.getElementById("result").innerHTML = checkdata();
+}
+
+
+function updateTextInput(val) {
+          document.getElementById('slider').innerHTML=val; 
+}

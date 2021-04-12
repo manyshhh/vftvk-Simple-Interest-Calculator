@@ -12,9 +12,8 @@
 
         Amount <input type="number"  id="principal">  <br/>
         
-        Rate <input type="range" id="interestRate" name="interestRate" 
-        min="1" max="20" step="0.25" value="10.25" oninput="rate()">
-        <span id="r">10.25%</span>  
+        Rate <input type="range" id="rate" name="rate" min="1" max="20" step="0.5" value="1" onchange="updateTextInput(this.value);">
+        <span id="slider">%</span>  
         <br>
         Value: <span id = "value"></span>
         <br>
@@ -34,7 +33,7 @@
 
         <button id = "button" onclick="compute(), checkdata()">Compute Interest</button> <br />
         <span id="result"></span>
-
+        <p id="Result"></p>
     </body>
 </form>
     </div>
