@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Simple Interest Calculator</title>
+<form id = formCalc>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     </head>
@@ -31,10 +32,11 @@
                 <option value="10">10</option>
             </select>  <br/>
 
-        <button onclick="compute()">Compute Interest</button> <br />
+        <button id = "button" onclick="compute(), checkdata()">Compute Interest</button> <br />
         <span id="result"></span>
 
     </body>
+</form>
     </div>
      <footer>@Copyright 2021</footer>
 </html>
