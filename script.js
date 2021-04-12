@@ -23,5 +23,5 @@ function compute() {
 
 
 function updateTextInput(val) {
-          document.getElementById('slider').innerHTML=val; 
+          document.getElementById('rate_val').innerHTML=val; 
 }
